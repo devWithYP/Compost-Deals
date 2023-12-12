@@ -1,25 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/layout/Layout";
-import Preloader from "../../components/preloader/Preloader";
-
 
 function Home() {
-
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-     setLoading(true)
-     setTimeout(() => {
-       setLoading(false)
-     }, 3000)
-  }, [])
-
+  
   return (
-    <>
-    {loading? 
-    <Preloader />
-    :<Layout>
+    <Layout>
       <div className="bg-whitesmoke" id="root">
         {/* <!-- Hero section --> */}
         <section id="Hero">
@@ -347,8 +333,6 @@ function Home() {
         </section>
       </div>
     </Layout>
-    }
-    </>
   );
 }
 
